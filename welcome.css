@@ -1,0 +1,241 @@
+/* Xenia */
+:root {
+  --background: #1A1A1A;
+  --text: #FFFFFF;
+  --accent: #00FFCC;
+  --accent-hover: #00E6B3;
+  --header-footer-bg: #2A2A2A;
+  --secondary-text: #BBBBBB;
+}
+
+.light-theme {
+  --background: #FFFFFF;
+  --text: #1A1A1A;
+  --accent: #00CC99;
+  --accent-hover: #00B386;
+  --header-footer-bg: #E0E0E0;
+  --secondary-text: #666666;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: var(--background);
+  color: var(--text);
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: var(--header-footer-bg);
+  border-radius: 5px;
+  margin: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.site-header h1 {
+  font-family: 'Orbitron', sans-serif;
+  color: var(--accent);
+  font-size: 24px;
+  margin: 0;
+}
+
+.site-header nav {
+  display: flex;
+  align-items: center;
+}
+
+.site-header nav a {
+  color: var(--accent);
+  text-decoration: none;
+  margin-left: 20px;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.site-header nav a:hover,
+.site-header nav a:focus {
+  color: var(--accent-hover);
+  outline: none;
+  text-decoration: underline;
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  color: var(--accent);
+  font-size: 18px;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+.theme-toggle:hover,
+.theme-toggle:focus {
+  color: var(--accent-hover);
+  outline: none;
+}
+
+.hero {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.hero h1 {
+  font-family: 'Orbitron', sans-serif;
+  color: var(--accent);
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 18px;
+  color: var(--secondary-text);
+  margin-bottom: 30px;
+}
+
+.enter-btn {
+  display: inline-block;
+  padding: 15px 30px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+  color: #000000;
+  text-decoration: none;
+  border-radius: 5px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 18px;
+  transition: transform 0.2s ease, background 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.enter-btn:hover,
+.enter-btn:focus {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, var(--accent-hover), var(--accent));
+  outline: none;
+}
+
+.light-theme .enter-btn {
+  color: #FFFFFF;
+}
+
+.site-footer {
+  text-align: center;
+  padding: 10px 0;
+  background: var(--header-footer-bg);
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.site-footer p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: var(--secondary-text);
+}
+
+.site-footer a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.site-footer a:hover,
+.site-footer a:focus {
+  color: var(--accent-hover);
+  text-decoration: underline;
+  outline: none;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.modal-content {
+  background: var(--background);
+  padding: 20px;
+  border-radius: 5px;
+  width: 90%;
+  max-width: 500px;
+  margin: 10% auto;
+  position: relative;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--accent);
+}
+
+.close-modal:hover,
+.close-modal:focus {
+  color: var(--accent-hover);
+  outline: none;
+}
+
+.modal-content h2 {
+  font-family: 'Orbitron', sans-serif;
+  color: var(--accent);
+  margin-bottom: 20px;
+}
+
+.modal-content form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.modal-content label {
+  font-family: 'Roboto', sans-serif;
+  color: var(--text);
+}
+
+.modal-content input,
+.modal-content textarea {
+  padding: 10px;
+  border: 1px solid var(--accent);
+  border-radius: 5px;
+  background: var(--header-footer-bg);
+  color: var(--text);
+  font-family: 'Roboto', sans-serif;
+}
+
+.modal-content textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.modal-content button {
+  padding: 10px;
+  background: var(--accent);
+  border: none;
+  border-radius: 5px;
+  color: var(--text);
+  font-family: 'Orbitron', sans-serif;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.modal-content button:hover,
+.modal-content button:focus {
+  background: var(--accent-hover);
+  outline: none;
+}

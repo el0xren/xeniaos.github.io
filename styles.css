@@ -1,0 +1,445 @@
+/* Xenia */
+:root {
+  --background: #1A1A1A;
+  --text: #FFFFFF;
+  --accent: #00FFCC;
+  --accent-hover: #00E6B3;
+  --card-bg: linear-gradient(135deg, #2A2A2A 0%, #1F1F1F 100%);
+  --header-footer-bg: #2A2A2A;
+  --secondary-text: #BBBBBB;
+}
+
+.light-theme {
+  --background: #FFFFFF;
+  --text: #1A1A1A;
+  --accent: #00CC99;
+  --accent-hover: #00B386;
+  --card-bg: linear-gradient(135deg, #F5F5F5 0%, #E0E0E0 100%);
+  --header-footer-bg: #E0E0E0;
+  --secondary-text: #666666;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: var(--background);
+  color: var(--text);
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: var(--header-footer-bg);
+  border-radius: 5px;
+  margin: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.site-header h1 {
+  font-family: 'Orbitron', sans-serif;
+  color: var(--accent);
+  font-size: 24px;
+  margin: 0;
+}
+
+.site-header nav {
+  display: flex;
+  align-items: center;
+}
+
+.site-header nav a {
+  color: var(--accent);
+  text-decoration: none;
+  margin-left: 20px;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.site-header nav a:hover,
+.site-header nav a:focus {
+  color: var(--accent-hover);
+  outline: none;
+  text-decoration: underline;
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  color: var(--accent);
+  font-size: 18px;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+.theme-toggle:hover,
+.theme-toggle:focus {
+  color: var(--accent-hover);
+  outline: none;
+}
+
+.downloads-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  flex: 1;
+}
+
+h1 {
+  font-family: 'Orbitron', sans-serif;
+  text-align: center;
+  color: var(--accent);
+  margin-bottom: 30px;
+}
+
+.rom-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center;
+  padding-bottom: 10px;
+}
+
+.rom-card {
+  background: var(--card-bg);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+  animation: fadeInUp 0.5s ease-out;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  min-width: 500px;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.rom-card-content {
+  flex: 1;
+  min-width: 0;
+  max-width: 320px;
+  white-space: nowrap;
+}
+
+.rom-card-image {
+  flex: 0 0 100px;
+  text-align: center;
+  position: absolute;
+  right: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.rom-card-image img {
+  max-width: 100%;
+  width: 75px;
+  height: auto;
+  border-radius: 5px;
+  animation: pulse 2s infinite;
+  transition: transform 0.2s ease;
+}
+
+.rom-card-image img:hover {
+  transform: scale(1.05);
+  animation: none;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.rom-card:hover {
+  transform: translateY(-5px);
+  transition: transform 0.3s ease;
+}
+
+h3 {
+  font-family: 'Orbitron', sans-serif;
+  color: var(--accent);
+  margin: 0 0 12px;
+}
+
+.devices {
+  font-size: 14px;
+  color: var(--secondary-text);
+  margin: 0 0 10px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.download-btn {
+  display: inline-block;
+  align-items: center;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+  color: #000000;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: transform 0.2s ease, background 0.2s ease;
+  animation: pulse 2s infinite;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 16px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  margin-right: 10px;
+}
+
+.download-btn i {
+  margin-right: 8px;
+  color: #000000;
+}
+
+.download-btn:hover,
+.download-btn:focus {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, var(--accent-hover), var(--accent));
+  outline: none;
+}
+
+.light-theme .download-btn {
+  color: #FFFFFF;
+}
+
+.light-theme .download-btn i {
+  color: #FFFFFF;
+}
+
+.changelog-toggle {
+  display: inline-block;
+  align-items: center;
+  background: none;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 14px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.changelog-toggle i {
+  margin-right: 8px;
+  color: var(--accent);
+}
+
+.changelog-toggle:hover,
+.changelog-toggle:focus {
+  background: var(--accent);
+  color: #000000;
+  outline: none;
+}
+
+.changelog-toggle:hover i,
+.changelog-toggle:focus i {
+  color: #000000;
+}
+
+.light-theme .changelog-toggle {
+  color: var(--accent);
+}
+
+.light-theme .changelog-toggle i {
+  color: var(--accent);
+}
+
+.light-theme .changelog-toggle:hover,
+.light-theme .changelog-toggle:focus {
+  color: #FFFFFF;
+}
+
+.light-theme .changelog-toggle:hover i,
+.light-theme .changelog-toggle:focus i {
+  color: #FFFFFF;
+}
+
+.changelog-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  margin-top: 15px;
+}
+
+.changelog-content.active {
+  max-height: 250px;
+}
+
+.changelog-content h4 {
+  color: var(--accent);
+  margin: 10px 0;
+}
+
+.changelog-content ul {
+  list-style: disc;
+  padding-left: 20px;
+  color: var(--secondary-text);
+}
+
+.site-footer {
+  text-align: center;
+  padding: 10px 0;
+  background: var(--header-footer-bg);
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.site-footer p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: var(--secondary-text);
+}
+
+.site-footer a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.site-footer a:hover,
+.site-footer a:focus {
+  color: var(--accent-hover);
+  text-decoration: underline;
+  outline: none;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.modal-content {
+  background: var(--background);
+  padding: 20px;
+  border-radius: 5px;
+  width: 90%;
+  max-width: 500px;
+  margin: 10% auto;
+  position: relative;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--accent);
+}
+
+.close-modal:hover,
+.close-modal:focus {
+  color: var(--accent-hover);
+  outline: none;
+}
+
+.modal-content h2 {
+  font-family: 'Orbitron', sans-serif;
+  color: var(--accent);
+  margin-bottom: 20px;
+}
+
+.modal-content form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.modal-content label {
+  font-family: 'Roboto', sans-serif;
+  color: var(--text);
+}
+
+.modal-content input,
+.modal-content textarea {
+  padding: 10px;
+  border: 1px solid var(--accent);
+  border-radius: 5px;
+  background: var(--header-footer-bg);
+  color: var(--text);
+  font-family: 'Roboto', sans-serif;
+}
+
+.modal-content textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.modal-content button {
+  padding: 10px;
+  background: var(--accent);
+  border: none;
+  border-radius: 5px;
+  color: var(--text);
+  font-family: 'Orbitron', sans-serif;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.modal-content button:hover,
+.modal-content button:focus {
+  background: var(--accent-hover);
+  outline: none;
+}
+
+@media (max-width: 600px) {
+  .rom-card {
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 320px;
+  }
+
+  .rom-card-content {
+    max-width: 100%;
+    white-space: normal;
+  }
+
+  .download-btn {
+    display: block;
+    margin-bottom: 10px;
+    margin-right: 0;
+  }
+
+  .changelog-toggle {
+    display: block;
+  }
+
+  .rom-card-image {
+    position: static;
+    width: 100%;
+    text-align: left;
+    transform: none;
+  }
+
+  .rom-card-image img {
+    width: 100px;
+  }
+}
+
+@media (min-width: 601px) {
+  .rom-card {
+    flex-direction: row;
+  }
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(0, 255, 204, 0.7); }
+  70% { box-shadow: 0 0 0 10px rgba(0, 255, 204, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(0, 255, 204, 0); }
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to Xenia ROMs</title>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Orbitron&family=Roboto&display=swap" as="style">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="welcome.css">
+</head>
+<body class="dark-theme">
+  <header class="site-header">
+    <h1>Xenia ROMs</h1>
+    <nav>
+      <a href="welcome.html">Home</a>
+      <a href="index.html">Downloads</a>
+      <a href="#contact" class="contact-link">Support</a>
+      <button class="theme-toggle" aria-label="Toggle theme">
+        <i class="fas fa-moon"></i>
+      </button>
+    </nav>
+  </header>
+  <section class="hero">
+    <h1>Welcome to Xenia ROMs</h1>
+    <p>Clean, fast, minimal - simple.</p>
+    <a href="index.html" class="enter-btn">Enter Now</a>
+  </section>
+  <footer class="site-footer">
+    <p>© 2025 Xenia ROMs. All rights reserved.</p>
+    <p><a href="#contact" class="contact-link">Contact Us</a> | <a href="#privacy">Privacy Policy</a></p>
+  </footer>
+  <div class="modal" id="contact-modal">
+    <div class="modal-content">
+      <span class="close-modal">×</span>
+      <h2>Contact Us</h2>
+      <form id="contact-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  </div>
+  <script src="welcome.js"></script>
+</body>
+</html>
